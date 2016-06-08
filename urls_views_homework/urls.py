@@ -16,9 +16,25 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from family_app.views import index_view
+from family_app.views import index_view, poston_view, paasch_view, jacobs_view, kesgen_view, poston_parents_view
+from family_app.views import poston_kids_view, poston_kids_career_view
+from family_app.views import paasch_thelanding_view, paasch_activities_view, paasch_latest_projects_view
+from family_app.views import jacobs_activities_view, kesgen_activities_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', index_view)
+    url(r'^$', index_view),
+    url(r'^poston$', poston_view),
+    url(r'^poston/parents$', poston_parents_view),
+    url(r'^poston/kids$', poston_kids_view),
+    url(r'^poston/kids/careers$', poston_kids_career_view),
+    url(r'^paasch$', paasch_view),
+    url(r'^paasch/thelanding$', paasch_thelanding_view),
+    url(r'^paasch/thelanding/activities$', paasch_activities_view),
+    url(r'^paasch/thelanding/activities/latest_projects$', paasch_latest_projects_view),
+    url(r'^jacobs$', jacobs_view),
+    url(r'^jacobs/activities$', jacobs_activities_view),
+    url(r'^kesgen$', kesgen_view),
+    url(r'^kesgen/activities$', kesgen_activities_view),
+
 ]
